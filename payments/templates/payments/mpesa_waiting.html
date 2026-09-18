@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="col-md-6 mx-auto text-center spinner-wrap">
+    <div class="spinner-border text-success mb-3" style="width:3rem;height:3rem;" role="status"></div>
+    <h3>Check your phone</h3>
+    <p>Enter your M-Pesa PIN on the prompt to complete payment of <strong>KES {{ order.total_amount }}</strong>.</p>
+    <p class="text-muted small">This page will update automatically once payment is confirmed.</p>
+</div>
+
+<script>
+const orderNumber = "{{ order.order_number }}";
+const statusUrl = "{% url 'payments:mpesa_status' order.order_number %}";
+const successUrl = "{% url 'store:order_success' order.order_number %}";
+
+let attempts = 0;
+const maxAttempts = 40; // ~2 minutes at 3s interval
+
+const poll = setInterval(async () => {
+    attempts++;
+    try {
+        const res = await fetch(statusUrl);
+        const data = await res.json();
+        if (data.status === 'paid') {
+            clearInterval(poll);
+            window.location.href = successUrl;
+        } else if (data.status === 'failed') {
+            clearInterval(poll);
+            document.querySelector('.spinner-wrap').innerHTML =
+                '<h3 class="text-danger">Payment failed or was cancelled.</h3><a href="{% url "store:checkout" %}" class="btn btn-dark mt-3">Try Again</a>';
+        }
+    } catch (e) {
+        console.error(e);
+    }
+    if (attempts >= maxAttempts) {
+        clearInterval(poll);
+        document.querySelector('.spinner-wrap').innerHTML =
+            '<h3>Still waiting...</h3><p>If you completed payment, check your email/orders shortly. Otherwise <a href="{% url "store:checkout" %}">try again</a>.</p>';
+    }
+}, 3000);
+</script>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="col-md-6 mx-auto text-center">
+    <h1>Pay with M-Pesa</h1>
+    <p>We'll send a payment prompt (STK Push) to your phone for <strong>KES {{ order.total_amount }}</strong>.</p>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Confirm M-Pesa phone number</label>
+            <input type="text" name="phone" class="form-control" value="{{ order.phone }}" placeholder="07XXXXXXXX" required>
+        </div>
+        <button type="submit" class="btn btn-success btn-lg w-100">Send Payment Prompt</button>
+    </form>
+</div>
+{% endblock %}

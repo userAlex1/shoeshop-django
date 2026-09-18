@@ -1,0 +1,25 @@
+.product-card img {
+    height: 220px;
+    object-fit: cover;
+}
+
+.product-card {
+    transition: transform 0.15s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+}
+
+.hero {
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    color: #fff;
+    border-radius: 0.75rem;
+    padding: 3rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.spinner-wrap {
+    text-align: center;
+    padding: 3rem 0;
+}

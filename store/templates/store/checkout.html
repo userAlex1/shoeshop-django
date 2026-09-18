@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Checkout</h1>
+
+<div class="row">
+    <div class="col-md-7">
+        <form method="post">
+            {% csrf_token %}
+            <h5>Delivery Details</h5>
+            <div class="mb-3">
+                <label class="form-label">Full name</label>
+                <input type="text" name="full_name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email (for receipt)</label>
+                <input type="email" name="email" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Phone number (for M-Pesa if selected)</label>
+                <input type="text" name="phone" class="form-control" placeholder="07XXXXXXXX" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Delivery Address</label>
+                <input type="text" name="address" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">City</label>
+                <input type="text" name="city" class="form-control" required>
+            </div>
+
+            <h5 class="mt-4">Payment Method</h5>
+            <div class="form-check mb-2">
+                <input class="form-check-input" type="radio" name="payment_method" value="mpesa" id="pm_mpesa" checked>
+                <label class="form-check-label" for="pm_mpesa">M-Pesa (STK Push to your phone)</label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="payment_method" value="card" id="pm_card">
+                <label class="form-check-label" for="pm_card">Card / Bank Transfer (Paystack)</label>
+            </div>
+
+            <button type="submit" class="btn btn-dark btn-lg w-100">Place Order &amp; Pay</button>
+        </form>
+    </div>
+
+    <div class="col-md-5">
+        <h5>Order Summary</h5>
+        <ul class="list-group mb-3">
+            {% for item in cart %}
+            <li class="list-group-item d-flex justify-content-between">
+                <span>{{ item.product.name }} (size {{ item.size }}) x{{ item.quantity }}</span>
+                <span>KES {{ item.subtotal }}</span>
+            </li>
+            {% endfor %}
+            <li class="list-group-item d-flex justify-content-between fw-bold">
+                <span>Total</span>
+                <span>KES {{ cart.total_price }}</span>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

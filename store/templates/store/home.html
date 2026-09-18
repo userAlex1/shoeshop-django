@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="hero">
+    <h1 class="display-5 fw-bold">Step into something new.</h1>
+    <p class="lead">Quality shoes, delivered across Kenya. Pay easily with M-Pesa or your card.</p>
+    <a href="{% url 'store:product_list' %}" class="btn btn-light btn-lg">Shop Now</a>
+</div>
+
+<h2 class="mb-3">Featured Shoes</h2>
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+    {% for product in products %}
+    <div class="col">
+        <div class="card h-100 product-card position-relative">
+
+            <!-- Wishlist -->
+            <div class="position-absolute top-0 end-0 p-2" style="z-index:10;">
+
+                <a href="{% url 'store:add_to_wishlist' product.id %}" class="btn btn-light rounded-circle shadow-sm">
+
+                    <i class="bi bi-heart"></i>
+
+                </a>
+
+            </div>
+
+            {% if product.image %}
+            <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+            {% else %}
+            <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center text-white"
+                style="height:220px;">
+                No Image
+            </div>
+            {% endif %}
+
+            <div class="card-body">
+
+                <h5 class="card-title">{{ product.name }}</h5>
+
+                <p class="card-text text-muted">{{ product.brand }}</p>
+
+                <p class="fw-bold">KES {{ product.price }}</p>
+
+                <a href="{{ product.get_absolute_url }}" class="btn btn-dark w-100">
+
+                    View
+
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+    {% empty %}
+    <p>No products yet — add some in the Django admin.</p>
+    {% endfor %}
+</div>
+{% endblock %}

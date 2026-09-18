@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ product.name }}
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row g-5 align-items-start">
+
+        <!-- Product Image -->
+        <div class="col-lg-6">
+
+            <div class="card border-0 shadow-sm position-relative">
+
+                <!-- Wishlist Button -->
+                <div class="position-absolute top-0 end-0 p-3" style="z-index:10;">
+
+                    <a href="{% url 'store:add_to_wishlist' product.id %}"
+                       class="btn btn-light rounded-circle shadow">
+
+                        <i class="bi bi-heart"></i>
+
+                    </a>
+
+                </div>
+
+                {% if product.image %}
+
+                    <img src="{{ product.image.url }}"
+                         class="card-img-top img-fluid rounded"
+                         alt="{{ product.name }}">
+
+                {% else %}
+
+                    <div class="d-flex align-items-center justify-content-center bg-light rounded"
+                         style="height:500px;">
+
+                        <h5 class="text-muted">No Image Available</h5>
+
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <!-- Product Information -->
+        <div class="col-lg-6">
+
+            <h1 class="fw-bold">
+                {{ product.name }}
+            </h1>
+
+            <p class="text-muted fs-5">
+                {{ product.brand }}
+            </p>
+
+            <h2 class="text-primary fw-bold mb-4">
+                KES {{ product.price }}
+            </h2>
+
+            <p class="lead">
+                {{ product.description }}
+            </p>
+
+            <hr>
+
+            <form action="{% url 'store:cart_add' product.id %}" method="post">
+
+                {% csrf_token %}
+
+                <div class="mb-3">
+
+                    <label class="form-label fw-semibold">
+
+                        Size
+
+                    </label>
+
+                    <select name="size"
+                            class="form-select"
+                            required>
+
+                        {% for size in product.sizes_list %}
+
+                            <option value="{{ size }}">
+
+                                {{ size }}
+
+                            </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+                <div class="mb-4">
+
+                    <label class="form-label fw-semibold">
+
+                        Quantity
+
+                    </label>
+
+                    <input type="number"
+                           name="quantity"
+                           value="1"
+                           min="1"
+                           class="form-control"
+                           style="max-width:140px;">
+
+                </div>
+
+                <div class="d-grid gap-2">
+
+                    <button type="submit"
+                            class="btn btn-dark btn-lg">
+
+                        <i class="bi bi-cart-plus"></i>
+
+                        Add to Cart
+
+                    </button>
+
+                </div>
+
+            </form>
+
+            <hr class="my-4">
+
+            <div class="row text-center">
+
+                <div class="col-4">
+
+                    <i class="bi bi-truck fs-2 text-success"></i>
+
+                    <p class="small mt-2">
+
+                        Fast Delivery
+
+                    </p>
+
+                </div>
+
+                <div class="col-4">
+
+                    <i class="bi bi-arrow-repeat fs-2 text-primary"></i>
+
+                    <p class="small mt-2">
+
+                        Easy Returns
+
+                    </p>
+
+                </div>
+
+                <div class="col-4">
+
+                    <i class="bi bi-shield-check fs-2 text-danger"></i>
+
+                    <p class="small mt-2">
+
+                        Secure Payment
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

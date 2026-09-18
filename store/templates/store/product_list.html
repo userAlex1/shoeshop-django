@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-3">
+        <h5>Categories</h5>
+        <div class="list-group mb-4">
+            <a href="{% url 'store:product_list' %}" class="list-group-item list-group-item-action {% if not category %}active{% endif %}">All</a>
+            {% for c in  categories %}
+            <a href="{% url 'store:product_list_by_category' c.slug %}" class="list-group-item list-group-item-action {% if category and category.slug == c.slug %}active{% endif %}">{{ c.name }}</a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-md-9">
+        <h2>{{ category.name|default:"All Shoes" }}</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for product in products %}
+            <div class="col">
+                <div class="card h-100 product-card">
+                    {% if product.image %}
+                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                    {% else %}
+                    <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center text-white" style="height:220px;">No Image</div>
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="fw-bold">KES {{ product.price }}</p>
+                        <a href="{{ product.get_absolute_url }}" class="btn btn-dark w-100">View</a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p>No products found.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
