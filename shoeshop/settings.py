@@ -10,7 +10,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # --- Core ---
 SECRET_KEY = config('SECRET_KEY', default='dev-only-secret-key-change-me')
 DEBUG = config('DEBUG', default=True, cast=bool)
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',')
+ALLOWED_HOSTS = [
+    "shoeshop-19i2kq7m8-useralex1s-projects.vercel.app",
+    "shoeshop-tau-five.vercel.app",
+    "localhost",
+    "127.0.0.1",
+]
+#ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
