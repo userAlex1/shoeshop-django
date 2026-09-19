@@ -59,6 +59,6 @@
 }
 @media (max-width: 767px) {
     body {
-        background: yellow !important;
+        background: green !important;
     }
 }
