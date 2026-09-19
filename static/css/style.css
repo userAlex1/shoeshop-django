@@ -23,3 +23,36 @@
     text-align: center;
     padding: 3rem 0;
 }
+/* Mobile product cards */
+@media (max-width: 576px) {
+    .product-card img {
+        height: 160px;
+        object-fit: cover;
+    }
+
+    .product-card .card-body {
+        padding: 0.75rem;
+    }
+
+    .product-card .card-title {
+        font-size: 17px;
+        margin-bottom: 0.4rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .product-card .card-text {
+        font-size: 14px;
+    }
+
+    .product-card .price {
+        font-size: 16px;
+    }
+
+    .product-card .btn {
+        width: 100%;
+        padding: 0.55rem;
+        font-size: 14px;
+    }
+}
