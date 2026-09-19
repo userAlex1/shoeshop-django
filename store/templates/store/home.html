@@ -7,7 +7,7 @@
 </div>
 
 <h2 class="mb-3">Featured Shoes</h2>
-<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+<div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
     {% for product in products %}
     <div class="col">
         <div class="card h-100 product-card position-relative">
@@ -24,17 +24,20 @@
             </div>
 
             {% if product.image %}
-            <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+            <img src="{{ product.image.url }}"
+                 class="card-img-top"
+                 alt="{{ product.name }}"
+                 style="height:220px; object-fit:cover;">
             {% else %}
             <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center text-white"
-                style="height:220px;">
+                 style="height:220px;">
                 No Image
             </div>
             {% endif %}
 
             <div class="card-body">
 
-                <h5 class="card-title">{{ product.name }}</h5>
+                <h5 class="card-title text-truncate">{{ product.name }}</h5>
 
                 <p class="card-text text-muted">{{ product.brand }}</p>
 

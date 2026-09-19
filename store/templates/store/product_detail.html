@@ -6,9 +6,9 @@
 
 {% block content %}
 
-<div class="container py-5">
+<div class="container py-4 py-lg-5">
 
-    <div class="row g-5 align-items-start">
+    <div class="row g-4 g-lg-5 align-items-start">
 
         <!-- Product Image -->
         <div class="col-lg-6">
@@ -30,7 +30,7 @@
                 {% if product.image %}
 
                     <img src="{{ product.image.url }}"
-                         class="card-img-top img-fluid rounded"
+                         class="card-img-top img-fluid rounded product-detail-image"
                          alt="{{ product.name }}">
 
                 {% else %}
@@ -51,7 +51,7 @@
         <!-- Product Information -->
         <div class="col-lg-6">
 
-            <h1 class="fw-bold">
+            <h1 class="fw-bold fs-2 fs-lg-1">
                 {{ product.name }}
             </h1>
 
@@ -133,7 +133,7 @@
 
             <hr class="my-4">
 
-            <div class="row text-center">
+            <div class="row text-center g-2">
 
                 <div class="col-4">
 

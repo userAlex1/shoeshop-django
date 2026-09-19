@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Checkout</h1>
-
-<div class="row">
+<div class="container py-4 py-lg-5">
+    <h1 class="mb-4">Checkout</h1>
+</div>
+<div class="row g-4">
     <div class="col-md-7">
         <form method="post">
             {% csrf_token %}
@@ -37,8 +38,11 @@
                 <input class="form-check-input" type="radio" name="payment_method" value="card" id="pm_card">
                 <label class="form-check-label" for="pm_card">Card / Bank Transfer (Paystack)</label>
             </div>
-
-            <button type="submit" class="btn btn-dark btn-lg w-100">Place Order &amp; Pay</button>
+            <div class="d-grid mt-4">
+                <button type="submit" class="btn btn-dark btn-lg">
+                    Place Order &amp; Pay
+                </button>
+            </div>
         </form>
     </div>
 
@@ -47,8 +51,12 @@
         <ul class="list-group mb-3">
             {% for item in cart %}
             <li class="list-group-item d-flex justify-content-between">
-                <span>{{ item.product.name }} (size {{ item.size }}) x{{ item.quantity }}</span>
-                <span>KES {{ item.subtotal }}</span>
+                <span class="text-break">
+                    {{ item.product.name }} (size {{ item.size }}) x{{ item.quantity }}
+                </span>
+                <span class="text-nowrap">
+                    KES {{ item.subtotal }}
+                </span>
             </li>
             {% endfor %}
             <li class="list-group-item d-flex justify-content-between fw-bold">

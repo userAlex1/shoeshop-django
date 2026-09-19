@@ -1,0 +1,254 @@
+[
+{
+  "model": "store.category",
+  "pk": 1,
+  "fields": {
+    "name": "Sneakers",
+    "slug": "sneakers"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 2,
+  "fields": {
+    "name": "Men shoes",
+    "slug": "men-shoes"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 3,
+  "fields": {
+    "name": "Ladies shoes",
+    "slug": "ladies-shoes"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 4,
+  "fields": {
+    "name": "Kids shoes",
+    "slug": "kids-shoes"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 5,
+  "fields": {
+    "name": "Sports",
+    "slug": "sports"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 6,
+  "fields": {
+    "name": "Boots",
+    "slug": "boots"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "Samba",
+    "slug": "samba",
+    "brand": "Addidas",
+    "description": "ADIDAS Samba shoes sneakers, original high quality samba shoes. Sneakers for men . sneakers .Sneakers for women. running sneakers. black samba shoes. white samba shoes. samba Single sole.",
+    "price": "2500.00",
+    "image": "products/cris-kpnkWLoM3cE-unsplash.jpg",
+    "available_sizes": "38,39,40,41,42,43,44",
+    "stock": 10,
+    "is_active": true,
+    "created_at": "2026-07-24T03:44:16.877Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 2,
+  "fields": {
+    "category": 2,
+    "name": "Casual",
+    "slug": "casual",
+    "brand": "Boss",
+    "description": "Premium Leather Upper: Crafted from high-quality leather that brings a touch of sophistication to any outfit.\r\nClassic Laced Design: A smart casual lace-up style that works well with jeans, chinos, or dress pants.\r\nCushioned Insoles: Built-in padding for maximum comfort, perfect for long hours of wear.\r\nLightweight and Flexible Sole: Provides traction and ease of movement, ideal for day-to-night wear.\r\nTimeless Versatility: Designed to blend seamlessly with both casual and semi-formal attire, suitable for dinners, outings, and office environments.",
+    "price": "3999.00",
+    "image": "products/download.webp",
+    "available_sizes": "38,39,40,41,42,43,44",
+    "stock": 10,
+    "is_active": true,
+    "created_at": "2026-07-24T04:26:04.351Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 3,
+  "fields": {
+    "category": 2,
+    "name": "Leather Casual",
+    "slug": "leather-casual",
+    "brand": "Generic",
+    "description": "Men’s Non-slip Leather Casual Shoes Formal Wear Lightweight Men’s Shoes Fashion Trend Outdoor Walking Shoes",
+    "price": "3499.00",
+    "image": "products/mens-non-slip.jpg",
+    "available_sizes": "38,39,40,41,42,43,44",
+    "stock": 8,
+    "is_active": true,
+    "created_at": "2026-07-24T04:32:30.599Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 4,
+  "fields": {
+    "category": 2,
+    "name": "Casual",
+    "slug": "casual1",
+    "brand": "Timberland",
+    "description": "Men's Timberland Two-Tone Leather Lace-Up Shoes. Perfectly blending rugged durability with sophisticated design, these shoes are a must-have for everyday wear.\r\n\r\nKey Features \r\nPremium Two-Tone Leather: Crafted from high-quality, durable leather featuring a stylish brown and blue contrast. This unique color combination makes them versatile for jeans, chinos, or khakis.\r\n\r\nClassic Lace-Up Design: Provides a secure, adjustable fit and a timeless, iconic look.\r\n\r\nAll-Day Comfort: Engineered with cushioned insoles and padding to ensure maximum comfort, whether you're walking the city streets or spending a full day on your feet.\r\n\r\nTimberland Quality: Trust the Timberland brand for exceptional craftsmanship and long-lasting footwear.\r\n\r\nDurable Rubber Outsole: Features a reliable grip and traction for various surfaces, enhancing both safety and longevity.\r\n\r\nVersatile Casual Style: The perfect casual shoe for men, easily transitioning from weekend outings to smart-casual work environments",
+    "price": "3299.00",
+    "image": "products/download_1.webp",
+    "available_sizes": "38,39,40,41,42,43,44",
+    "stock": 8,
+    "is_active": true,
+    "created_at": "2026-07-24T04:38:26.122Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 5,
+  "fields": {
+    "category": 1,
+    "name": "Men's Sport sneakers",
+    "slug": "mens-sport-sneakers",
+    "brand": "Addidas",
+    "description": "Men's Sports Sneakers Thick-Soled Height-Increasing Casual Versatile Shoes",
+    "price": "3499.00",
+    "image": "products/download_2.webp",
+    "available_sizes": "38,39,40,41,42,43,44",
+    "stock": 15,
+    "is_active": true,
+    "created_at": "2026-07-24T04:47:49.177Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 6,
+  "fields": {
+    "category": 3,
+    "name": "Women sneakers",
+    "slug": "women-sneakers",
+    "brand": "Jordan",
+    "description": "The sneakers are affordable, they are worth every coin spent...Get yours today and slay all day\r\n\r\n·        Women's Outdoor Sport Running Shoes\r\n\r\n·         Comfortable for: Hiking, Running, Working out, Official and Casual wear\r\n\r\n·         Affordable and Durable",
+    "price": "999.00",
+    "image": "products/download_3.webp",
+    "available_sizes": "38,39,40,41,42,43,44",
+    "stock": 10,
+    "is_active": true,
+    "created_at": "2026-07-24T04:52:17.652Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 7,
+  "fields": {
+    "category": 3,
+    "name": "Casual women sneakers",
+    "slug": "casual-women-sneakers",
+    "brand": "Generic",
+    "description": "Sport Shoes Women Shoes Lady Casual Women Sneakers Leisure Thick Bottom Fashion Women’s Shoes",
+    "price": "1999.00",
+    "image": "products/download_4.webp",
+    "available_sizes": "38,39,40,41,42,43,44",
+    "stock": 10,
+    "is_active": true,
+    "created_at": "2026-07-24T04:54:23.327Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 8,
+  "fields": {
+    "category": 3,
+    "name": "Camel comfort",
+    "slug": "camel-comfort",
+    "brand": "Unbranded",
+    "description": "Step into effortless elegance with these round-toe ballerina shoes. A timeless staple for any wardrobe, they feature a chic contrast cream toe cap and a delicate bow detail finished with sophisticated metallic tips. Engineered with our signature Forever Comfort® padded insoles, these flats offer memory foam layer support to keep you comfortable on your feet all day long.\r\n\r\nClassic round-toe silhouette\r\nSupportive Forever Comfort® padded insoles\r\nElegant contrast cream toe cap design\r\nDelicate front bow detail with metallic hardware tips\r\nComfortable flat sole perfect for daily wear",
+    "price": "3999.00",
+    "image": "products/download_5.webp",
+    "available_sizes": "38,39,40,41,42,43,44",
+    "stock": 10,
+    "is_active": true,
+    "created_at": "2026-07-24T04:58:19.196Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 9,
+  "fields": {
+    "category": 3,
+    "name": "Shoes girl athletic",
+    "slug": "shoes-girl-athletic",
+    "brand": "Puma",
+    "description": "These Women Casual Shoes Walking  Flat Shoes are perfect for any woman who wants to stay comfortable while looking stylish. these shoes are perfect for walking and other athletic activities. The flat design ensures that your feet stay comfortable all day long, while the durable construction ensures that these shoes will last for years to come. Whether you're running errands or hitting the gym, these Women Casual Shoes Walking  Flat Shoes are the perfect choice for any active woman.",
+    "price": "989.00",
+    "image": "products/download_6.webp",
+    "available_sizes": "38,39,40,41,42,43,44",
+    "stock": 10,
+    "is_active": true,
+    "created_at": "2026-07-24T05:02:08.887Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 10,
+  "fields": {
+    "category": 2,
+    "name": "Leather official",
+    "slug": "leather-official",
+    "brand": "Generic",
+    "description": "Man Genuine Leather Shoes Rubber Sole Man Business Office Male Dress Leather Wedding Party Shoes Plus 48 Men Italian Shoe",
+    "price": "4999.00",
+    "image": "products/download_7.webp",
+    "available_sizes": "38,39,40,41,42,43,44",
+    "stock": 10,
+    "is_active": true,
+    "created_at": "2026-07-24T05:09:57.334Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 11,
+  "fields": {
+    "category": 2,
+    "name": "Empire official",
+    "slug": "empire-official",
+    "brand": "Empire",
+    "description": "Empire Official Men’s Premium Leather Wingtip Brogue Oxford Shoes in Dark Brown, expertly designed for style-conscious professionals. Crafted from high-quality genuine leather, these classic Oxford shoes feature a refined dark brown finish that develops a rich patina over time, enhancing their timeless appeal.\r\n\r\nThe traditional wingtip brogue design showcases detailed perforations along the toe cap and seams, delivering a sophisticated, executive look ideal for business and formal occasions. Built for comfort and durability, these men’s dress shoes are fitted with a cushioned insole and a reinforced anti-slip rubber sole, ensuring stability and all-day wearability.\r\n\r\nPerfect for office wear, corporate meetings, weddings, interviews, and formal events, the Empire Official Leather Oxfords pair effortlessly with suits, dress trousers, and smart-casual outfits. A must-have for the modern gentleman seeking elegance, comfort, and lasting quality.\r\n\r\nKey Features & Benefits\r\n\r\nDurable, breathable leather construction for long-lasting wear and a luxurious finish.\r\nTimeless “W”-shaped toe cap with decorative brogue perforations for a refined formal style.\r\nSleek and polished silhouette ideal for business formal and professional attire.\r\nSoft cushioned insole and smooth inner lining reduce foot fatigue during extended wear.\r\nStrong, wear-resistant sole provides excellent traction and stability on multiple surfaces.\r\nSuitable for office wear, weddings, formal events, corporate meetings, and interviews.\r\nElegant neutral tone that pairs seamlessly with navy, black, charcoal, and tan suits.",
+    "price": "2699.00",
+    "image": "products/download_8.webp",
+    "available_sizes": "38,39,40,41,42,43,44",
+    "stock": 10,
+    "is_active": true,
+    "created_at": "2026-07-24T05:12:17.639Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 12,
+  "fields": {
+    "category": 4,
+    "name": "Kids sport",
+    "slug": "kids-sport",
+    "brand": "Nike",
+    "description": "Looking for the perfect pair of kids’ shoes for school, play, or weekend adventures? The Kidsnest Children’s Sneakers are designed to provide both comfort and style for active boys and girls. Crafted with breathable synthetic uppers, mesh lining, and a durable rubber outsole, these sneakers keep little feet supported throughout the day.\r\n\r\nThe lace-up closure ensures a secure fit, while the lightweight EVA insole offers excellent cushioning for growing feet. Featuring a trendy patchwork design with a classic round toe, these unisex kids’ trainers are suitable for every occasion—from playground fun to casual outings. The easy-to-wear design makes them ideal for independent toddlers learning to put on their own shoes.\r\n\r\nThese unisex sneakers are versatile enough for walking, running, and casual wear. Perfect for toddlers and kids, they combine sporty performance with modern fashion appeal, giving you peace of mind knowing your child is supported every step of the way.\r\n\r\nKey Features\r\n\r\nGender: Unisex (Boys & Girls)\r\nOutsole Material: Rubber (non-slip & durable)\r\nUpper Material: Synthetic (breathable & easy to clean)\r\nClosure Type: Lace-Up (secure fit)\r\nInsole Material: EVA (soft cushioning)\r\nLining Material: Mesh (ventilation & comfort)\r\nToe Shape: Round Toe\r\nPattern: Patchwork Design\r\nCategory: Athletic & Outdoor Kids Shoes",
+    "price": "2199.00",
+    "image": "products/download_9.webp",
+    "available_sizes": "38,39,40,41,42,43,44",
+    "stock": 10,
+    "is_active": true,
+    "created_at": "2026-07-24T05:15:51.208Z"
+  }
+}
+]
