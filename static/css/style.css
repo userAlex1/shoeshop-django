@@ -57,8 +57,6 @@
         font-size: 14px;
     }
 }
-@media (max-width: 767px) {
-    body {
-        background: green !important;
-    }
+body {
+    background: green !important;
 }
