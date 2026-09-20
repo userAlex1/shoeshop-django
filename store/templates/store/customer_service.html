@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}
+Customer Service
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h2 class="mb-4">Customer Service</h2>
+
+    <!-- Contact Us -->
+    <div id="contact" class="mb-4">
+        <h4>Contact Us</h4>
+        <p class="text-muted">
+            Need help with your order? Contact our support team.
+        </p>
+
+        <p class="mb-1">
+            <strong>Email:</strong> mwendaalexis@gmail.com
+        </p>
+
+        <p>
+            <strong>Phone:</strong> +254 746 328 795
+        </p>
+    </div>
+
+    <!-- Shipping -->
+    <div id="shipping" class="mb-4">
+        <h4>Shipping</h4>
+        <p class="text-muted">
+            We deliver orders within Kenya. Delivery times and charges
+            may vary depending on your location.
+        </p>
+    </div>
+
+    <!-- Returns -->
+    <div id="returns" class="mb-4">
+        <h4>Returns</h4>
+        <p class="text-muted">
+            If you receive the wrong or damaged item, contact us
+            within 7 days of delivery to request a return.
+        </p>
+    </div>
+
+    <!-- FAQs -->
+    <div id="faqs" class="mb-4">
+        <h4>FAQs</h4>
+
+        <p>
+            <strong>How can I place an order?</strong><br>
+            Browse our products, add an item to your cart, and proceed
+            to checkout.
+        </p>
+
+        <p>
+            <strong>How can I pay?</strong><br>
+            Available payment options are shown during checkout.
+        </p>
+
+        <p>
+            <strong>Can I track my order?</strong><br>
+            Order tracking information will be provided when available.
+        </p>
+    </div>
+
+    <!-- Privacy Policy -->
+    <div id="privacy" class="mb-4">
+        <h4>Privacy Policy</h4>
+        <p class="text-muted">
+            We respect your privacy and only use customer information
+            when necessary to process orders and provide our services.
+        </p>
+    </div>
+
+    <!-- Terms & Conditions -->
+    <div id="terms" class="mb-4">
+        <h4>Terms & Conditions</h4>
+        <p class="text-muted">
+            By using this website, you agree to provide accurate
+            information and use our services responsibly. Product
+            prices and availability may change without notice.
+        </p>
+    </div>
+
+    <a href="{% url 'store:product_list' %}" class="btn btn-dark">
+        Continue Shopping
+    </a>
+
+</div>
+
+{% endblock %}

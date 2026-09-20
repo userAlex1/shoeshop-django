@@ -16,7 +16,8 @@ def home(request):
         'products': products,
         'categories': categories,
     })
-
+def customer_service(request):
+    return render(request, "store/customer_service.html")
 
 def product_list(request, category_slug=None):
     category = None

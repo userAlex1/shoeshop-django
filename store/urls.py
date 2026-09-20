@@ -21,5 +21,5 @@ urlpatterns = [
     path('order/success/<uuid:order_number>/', views.order_success, name='order_success'),
     path("wishlist/", views.wishlist, name="wishlist",),
     path("wishlist/add/<int:product_id>/", views.add_to_wishlist, name="add_to_wishlist"),
-
+    path("customer-service/", views.customer_service, name="customer_service"),
 ]
