@@ -4,8 +4,7 @@ from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from .models import Product, Wishlist
-from .models import Product, Category, Order, OrderItem
+from .models import Product, Category, Order, OrderItem, Wishlist, NewsletterSubscriber
 from .cart import Cart
 
 
@@ -18,6 +17,30 @@ def home(request):
     })
 def customer_service(request):
     return render(request, "store/customer_service.html")
+
+@require_POST
+def newsletter_subscribe(request):
+    email = request.POST.get('email', '').strip()
+
+    if not email:
+        messages.error(request, "Please enter your email address.")
+        return redirect(request.META.get("HTTP_REFERER", "store:home") +"#newsletter")
+
+    try:
+        NewsletterSubscriber.objects.create(email=email)
+        messages.success(
+            request,
+            "You have successfully subscribed to our newsletter!",
+            extra_tags="newsletter"
+        )
+    except Exception:
+        messages.info(
+            request, 
+            "This email is already subscribed.",
+            extra_tags="newsletter"
+        )
+
+    return redirect(request.META.get("HTTP_REFERER", "store:home") +"#newsletter")
 
 def product_list(request, category_slug=None):
     category = None
@@ -117,7 +140,7 @@ def order_success(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
     return render(request, 'store/order_success.html', {'order': order})
 
-
+@login_required
 def wishlist(request):
 
     items = Wishlist.objects.filter(
